@@ -32,6 +32,8 @@ def move(board, index, mark = "X")
   board[index] = mark
 end
 
+
+
 def turn(board)
   
   puts "Please enter 1-9:"
@@ -42,17 +44,7 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
-    loop do
-      puts "Please write valid input! From 1-9:"
-      user_input = gets.strip
-      index = input_to_index(user_input)
-      
-      if valid_move?(board, index)
-        move(board, index)
-        display_board(board)
-        break
-      end
-      
-    end
+    turn(board)
   end
+  
 end
